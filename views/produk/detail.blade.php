@@ -184,7 +184,7 @@
                                     {{$produk->deskripsi}}
                                 </div>
                                 <div id="tab-2" class="tab-content">
-                                    <p>{{pluginTrustklik()}}</p>
+                                    <p>{{ pluginComment(product_url($produk), @$produk) }}</p>
                                 </div>
                             </div>
                         </form>
