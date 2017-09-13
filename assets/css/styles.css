@@ -82,7 +82,7 @@ body {
     #header .logo img {
       max-width: 100%;
       margin: 7px 7px;
-      width: 200px }
+      max-height: 129px; }
   #header .tabs-chart {
     max-width: 100%;
     height: 77px;
@@ -1211,11 +1211,10 @@ body {
     right: 0;
     background: url(images/arrow-partner.png) no-repeat -22px 0px !important; }
   #detail-product .tab-quantity {
-    margin: 0;
+    margin: 0 20px 20px 0;
     position: relative;
     top: 22px;
-    float: left;
-    margin-right: 20px; }
+    float: left; }
   #detail-product h2 {
     font-family: "Open Sans", sans-serif;
     color: #000;
@@ -1237,7 +1236,7 @@ body {
     border: 1px solid #54940f; }
   #detail-product .avalaible-text {
     padding: 0;
-    margin-top: 100px; }
+    margin-top: 10px; }
   #detail-product span {
     font-family: "Open Sans", sans-serif; }
     #detail-product span i {
@@ -1294,7 +1293,7 @@ body {
   #detail-product .title-product {
     width: 100%;
     overflow: hidden;
-    /*margin-top: 10px;*/ }
+    margin-top: 20px; }
     #detail-product .title-product h1 {
       font-family: "Open Sans", sans-serif;
       color: #000;
@@ -1312,7 +1311,7 @@ body {
       font-size: 1em; }
 
 .tabs-option-category {
-  width: 92%;
+  width: 98%;
   overflow: hidden;
   margin-top: 30px; }
   .tabs-option-category .rating {
@@ -1480,7 +1479,7 @@ body {
       font-family: "Open Sans", sans-serif;
       font-size: 1em;
       font-weight: 400;
-      padding: 10px;
+      padding: 12px 21px;
       border-radius: 5px;
       margin-left: 10px; }
       .login-page .tabs-btn-login .register:hover {
@@ -1512,7 +1511,7 @@ body {
       font-weight: 400; }
     .login-page .login-wrap .forgot {
       font-family: "Open Sans", sans-serif;
-      color: #000;
+      color: #ff0109;
       font-size: 1em;
       font-weight: 400; }
     .login-page .login-wrap .btn-login {
@@ -1653,7 +1652,8 @@ body {
   width: 176px;
 }
 .post .tab-title{
-  width: 176px;
+  min-width: 176px;
+  width: 100%;
 }
 
 .row article.text-center{
@@ -1664,14 +1664,14 @@ body {
 }
 
 .tab-btn button {
-display: block;
-font-size: 1em;
-color: #fff;
-font-family: "Open Sans", sans-serif;
-font-weight: 300;
-text-transform: uppercase;
-margin-top: 20px;
- }
+  display: inline-block;
+  font-size: 1em;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-top: 2.5em;
+}
 
 #menus .bgmenu{
   list-style: none;
@@ -1688,12 +1688,6 @@ margin-top: 20px;
 @media screen and (max-width: 416px){
   .sortby  { display: none; }
 }
-
-@media screen and (max-width: 1024px){
-#menus-top-section  {
-    background: none;
-        }
-  }
 
 img#imgZoom{
   height: 380px;
@@ -1825,6 +1819,14 @@ h1.col-xs-12.col-sm-12{
 #sosmed{text-align: right}.tags { padding: 0px; }
 .powerup input[type="submit"]:hover{opacity: 0.7; color: #000}
 #myshopcart{padding: 10px; color: #ff0109; margin-top: 10px}.chart .fa{font-size: 20px}
+.p0 { padding: 0; }
+.mobile-search { display: none; }
+#account {
+  background: #fdfdfd;
+  padding: 0px 10px 10px;
+}
+#account .active { background: #eee; }
+
 
 @media screen and (max-width: 321px){
   #footer .icon { margin: 2px }
@@ -1852,12 +1854,15 @@ h1.col-xs-12.col-sm-12{
 }
 @media screen and (max-width: 480px){
   .product-new a img{ width: 150px; height: auto; }
-  .left-section #tab-product-new .tab-product-name{ margin: 10px 0; }
   .tabs-checkout{ text-align: center }
   .tabs-checkout .tab-btn{ float: none; margin-top: 10px; }
   .register-page{ padding-right: 20px; }
   .fb-share-button {top: -5 !important; margin-top: -5px !important;}
   .item-icon > span{font-size: 9px}
+  #detail-product .tabs-caption { text-align: center; }
+  #detail-product .tab-quantity { float: none; margin: 0; }
+  #detail-product .select-style { max-width: 150px; display: inline-block; }
+  .sosmed { width: 100%; text-align: center; }
 }
 @media only screen and (width: 480px){
   .left-section #tab-product-new .tab-product-name{margin: 10px 0;width: 100%}
@@ -1871,6 +1876,13 @@ h1.col-xs-12.col-sm-12{
   .clearboth{clear: both}
   .login{float: none}
   .item-icon{top: 10px; left: 10px;}
+  .login-page .login-wrap { margin-top: 4em; }
+  .left-section #tab-product-new .product-new { text-align: center; }
+  .left-section #tab-product-new img { float: none; margin-bottom: 10px; }
+  .left-section #tab-product-new .tab-product-name { float: none; width: 100%; }
+  .left-section #tab-product-new .product-name { float: none; }
+  .left-section #tab-product-new .tab-price { width: 100%; }
+  .left-section #tab-product-new .price { float: none; }
 }
 @media only screen and (width: 768px){
   .related{padding: 0}
@@ -1895,7 +1907,7 @@ h1.col-xs-12.col-sm-12{
 }
 @media screen and (max-width: 1024px){
   .copyright{ width: 50% }
-  #menus-top-section  { background: none; }
+  .mobile-search { display: inline-block; }
 }
 @media screen and (max-width: 1279px) {
   .sortby{display: none}
@@ -1919,3 +1931,12 @@ form[name="order"] > input[name="SAVE"]:hover {
 .table-responsive { overflow-x: auto; }
 .btn-pay { background: #00aee7; border: none; padding: 10px; color: #fff }
 .btn-pay:hover { cursor: pointer; opacity: 0.7 }
+.midtrans {
+  padding: 8px;
+  background: #f7f7f7;
+}
+.picmix { width: 50px; opacity: 0.8; }
+.picmix:hover { opacity: 1; }
+.mt10 { margin-top: 10px; }
+.mt20 { margin-top: 20px; }
+.mt30 { margin-top: 30px; }

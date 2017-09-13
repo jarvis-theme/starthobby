@@ -59,9 +59,6 @@
                         @if(!empty($kontak->bb))
                         <li><i class="fa fa-circle"></i> <a href="#"> {{$kontak->bb}}</a></li>
                         @endif
-                        @if(!empty($kontak->ym))
-                        <li><i class="fa fa-circle"></i> {{ymyahoo($kontak->ym)}}</li>
-                        @endif
                     </ul>
                 </div>
                 <div class="link">
@@ -83,7 +80,9 @@
             <div class="bank">
                 @if(list_banks()->count() > 0)
                     @foreach(list_banks() as $value)
-                    <img src="{{bank_logo($value)}}" alt="{{$value->bankdefault->nama}}" title="{{$value->bankdefault->nama}}">
+                        @if($value->status == 1)
+                        <img src="{{bank_logo($value)}}" alt="{{$value->bankdefault->nama}}" title="{{$value->bankdefault->nama}}">
+                        @endif
                     @endforeach
                 @endif
                 @if(count(list_payments()) > 0)
@@ -102,11 +101,9 @@
                 @if(count(list_dokus()) > 0 && list_dokus()->status == 1)
                 <img src="{{url('img/bank/doku.jpg')}}" alt="doku myshortcart" title="Doku" />
                 @endif
-            </div>
-            <div class="copyright">
-                <p class="left-company">
-                    &copy; {{ short_description(Theme::place('title'),80) }} {{date('Y')}} All Right Reserved. Powered by <a class="title-copyright" href="http://jarvis-store.com" target="_blank"> Jarvis Store</a>
-                </p>
+                @if(count(list_veritrans()) > 0 && list_veritrans()->status == 1 && list_veritrans()->type == 1)
+                <img class="midtrans" src="{{url('img/bank/midtrans.png')}}" alt="Midtrans" title="Midtrans">
+                @endif
             </div>
             <div class="social-media">
                 <span id="footer-sosmed">Ikuti Kami</span>
@@ -140,6 +137,16 @@
                     <div class="icon" title="Instagram"><i class="fa fa-instagram"></i></div>
                 </a>
                 @endif
+                @if(!empty($kontak->picmix))
+                <a href="{{url($kontak->picmix)}}" target="_blank" title="Picmix">
+                    <img class="picmix" src="//d3kamn3rg2loz7.cloudfront.net/blogs/event/icon-picmix.png">
+                </a>
+                @endif
+            </div>
+            <div class="copyright">
+                <p class="left-company">
+                    &copy; {{ short_description(Theme::place('title'),80) }} {{date('Y')}} All Right Reserved. Powered by <a class="title-copyright" href="http://jarvis-store.com" target="_blank"> Jarvis Store</a>
+                </p>
             </div>
         </div>
     </div>

@@ -128,24 +128,12 @@
                                                 @endif
                                             </ul>
                                         </div>
-                                        <div class="tab-quantity">
-                                            @if($opsiproduk->count() > 0)
-                                            <h3>Opsi :</h3>
-                                            <div class="select-style">
-                                              <select>
-                                                <option value="">-- Pilih Opsi --</option>
-                                                @foreach ($opsiproduk as $key => $opsi)
-                                                 <option value="{{$opsi->id}}" {{ $opsi->stok==0 ? 'disabled':''}}>{{$opsi->opsi1.($opsi->opsi2=='' ? '':' / '.$opsi->opsi2).($opsi->opsi3=='' ? '':' / '.$opsi->opsi3)}} {{price($opsi->harga)}}</option>
-                                                @endforeach
-                                              </select>
-                                            </div>
+                                        <div class="title-product">
+                                            <h1>{{$produk->nama}}</h1>
+                                            @if(!empty($produk->hargaCoret))
+                                            <span><del>{{price($produk->hargaCoret)}}</del></span>
                                             @endif
-                                        </div>
-                                        <div class="tab-quantity">
-                                            <h3>Jumlah :</h3>
-                                            <button type="submit" class="qtyminus" field="qty" /><i class="fa fa-caret-left"></i></button>
-                                            <input type="text" name="qty" value="1" class="qty" />
-                                            <button type="button" value="+" class="qtyplus" field="qty" /><i class="fa fa-caret-right"></i></button>
+                                            <h2>{{price($produk->hargaJual)}}</h2>
                                         </div>
                                         <div class="avalaible-text">
                                             @if($produk->stok > 0)
@@ -157,6 +145,25 @@
                                                 <span class="text-color">Out of stock</span>
                                             @endif
                                         </div>
+                                        @if($opsiproduk->count() > 0)
+                                        <div class="tab-quantity">
+                                            <h3>Opsi :</h3>
+                                            <div class="select-style">
+                                              <select>
+                                                <option value="">-- Pilih Opsi --</option>
+                                                @foreach ($opsiproduk as $key => $opsi)
+                                                 <option value="{{$opsi->id}}" {{ $opsi->stok==0 ? 'disabled':''}}>{{$opsi->opsi1.($opsi->opsi2=='' ? '':' / '.$opsi->opsi2).($opsi->opsi3=='' ? '':' / '.$opsi->opsi3)}} {{price($opsi->harga)}}</option>
+                                                @endforeach
+                                              </select>
+                                            </div>
+                                        </div>
+                                        @endif
+                                        <div class="tab-quantity">
+                                            <h3>Jumlah :</h3>
+                                            <button type="submit" class="qtyminus" field="qty" /><i class="fa fa-caret-left"></i></button>
+                                            <input type="text" name="qty" value="1" class="qty" pattern="[0-9]" />
+                                            <button type="button" value="+" class="qtyplus" field="qty" /><i class="fa fa-caret-right"></i></button>
+                                        </div>
                                         <div class="tab-btn"> 
                                             <button class="baddtocart btn-checkout chart" type="submit">
                                                 <i class="fa fa-cart-plus fa-2x"></i>&nbsp;&nbsp;BELI</button>
@@ -164,13 +171,6 @@
                                         <br>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="title-product">
-                                <h1>{{$produk->nama}}</h1>
-                                @if(!empty($produk->hargaCoret))
-                                <span><del>{{price($produk->hargaCoret)}}</del></span>
-                                @endif
-                                <h2>{{price($produk->hargaJual)}}</h2>
                             </div>
                             <div class="sosmed">
                                 {{sosialShare(product_url($produk))}}

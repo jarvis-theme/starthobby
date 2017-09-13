@@ -1,4 +1,4 @@
-@if($mailing->action != '')
+@if(@$mailing->action != '')
 <div class="news-letter">
     <h1>NewsLetter</h1>
     <span>Dapatkan promo menarik dari toko kami segera!</span>

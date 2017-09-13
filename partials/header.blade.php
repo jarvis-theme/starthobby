@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-12 p0">
         <div id="sign-up">
             @if( is_login() )
             <div class="account">
@@ -55,6 +55,20 @@
                 @endif
                 {{--*/ $i += 1 /*--}}
             @endforeach
+            <li class="mobile-search">
+                <form action="{{url('search')}}" method="post">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="search" required>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">Cari</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </li>
             <li class="search">
                 <button class="btn-form">
                     <img src="{{url(dirTemaToko().'starthobby/assets/img/zoom.png')}}" alt="Search">
